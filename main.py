@@ -1,6 +1,8 @@
 import discord
 import asyncio
 import random
+import os
+import requests
 from discord.ext import commands
 import requests
 #Translator
@@ -11,7 +13,7 @@ from texte import SPRACHEN,HELP
 
 
 TAG = "[L O L] "
-TOKEN = "NTM4MDI1ODgxNDkxMjEwMjQw.D0xCjw.Csdc_I-LpaS6y1zQVX2wRLVN3cs"
+
 
 bot = commands.Bot(
     command_prefix="-"
@@ -204,5 +206,4 @@ async def teams(ctx: commands.Context, channel_name: str, team_size: int):
         for m in team:
             await bot.move_member(m, c)
 
-
-bot.run(TOKEN)
+client.run(str(os.environ.get('BOT_TOKEN')))
